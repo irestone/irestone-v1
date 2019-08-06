@@ -1,4 +1,4 @@
-import app from '../app'
+import { app } from '../app'
 import debug from 'debug'
 import http from 'http'
 
@@ -49,7 +49,7 @@ const onListening = () => {
 //  INITIALIZING
 // =====================================
 
-//? why
+// ? why
 // app.set('port', port)
 
 const port = normalizePort(process.env.PORT || '8080')
