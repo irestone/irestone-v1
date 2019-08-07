@@ -1,8 +1,91 @@
 @import 'reset.css';
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+html,
+body,
+.body-wrapper {
+  height: 100%;
+  font: 1em sans-serif;
 }
-a {
-  color: #00b7ff;
+.body-wrapper {
+  display: flex;
+}
+.panel {
+  width: 14.5em;
+  flex-shrink: 0;
+  background: linear-gradient(to top, #0f2027, #203a43, #2c5364);
+  box-shadow: 0.4em 0 6em #000;
+  z-index: 1;
+}
+.panel a {
+  text-decoration: none;
+}
+.panel .logo {
+  display: block;
+  font-size: 2em;
+  height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.panel .logo span {
+  color: #fff;
+}
+.panel .photo {
+  display: block;
+  width: 7.631578947368421em;
+  height: 7.631578947368421em;
+  border-radius: 50%;
+  border: 0.25em solid #405f69;
+  box-shadow: 0 0 0.25em rgba(0,0,0,0.3);
+  margin: 1vh auto 0;
+  overflow: hidden;
+}
+.panel .photo img {
+  display: block;
+  width: 100%;
+}
+.panel .intro {
+  font-size: 0.9em;
+  font-style: italic;
+  text-align: center;
+  color: #aebec5;
+  margin-top: 3vh;
+  line-height: 1.5;
+}
+.panel .nav {
+  margin-top: 3vh;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.panel .nav__title span {
+  display: inline-block;
+  color: #d2d3d4;
+  padding: 1em 1.5em;
+  text-transform: uppercase;
+  border-top: 1px solid #405f69;
+  border-bottom: 1px solid #405f69;
+}
+.panel .nav__links {
+  padding: 1.5em 1em;
+}
+.panel .nav__links li + li {
+  margin-top: 0.5em;
+}
+.panel .nav__links a {
+  color: #b9d4de;
+}
+.panel .nav__links a:hover {
+  color: #00baff;
+}
+.main {
+  width: 88vw;
+  background: #243135;
+  color: #fff;
+  padding: 4em;
+}
+.main .title {
+  font-size: 2em;
+}
+.main .content {
+  margin-top: 2em;
 }

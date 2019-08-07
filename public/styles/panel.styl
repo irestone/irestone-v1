@@ -1,0 +1,69 @@
+.panel
+  width 14.5em
+  flex-shrink 0
+  background linear-gradient(to top, #0f2027, #203a43, #2c5364)
+  box-shadow .4em 0 6em black
+  z-index 1
+
+  a
+    text-decoration none
+
+  .logo
+    display block
+    font-size 2em
+    height 3em
+    display flex
+    align-items center
+    justify-content center
+
+    span
+      color white
+
+  .photo
+    display block
+    width (@width/1.9)
+    height @width
+    border-radius 50%
+    border 0.25em solid #405f69
+    box-shadow 0 0 .25em rgba(black, .3)
+    margin 1vh auto 0
+    overflow hidden
+
+    img
+      display block
+      width 100%
+
+  .intro
+    font-size 0.9em
+    font-style italic
+    text-align center
+    color #aebec5
+    margin-top 3vh
+    line-height 1.5
+
+  .nav
+    margin-top 3vh
+    display flex
+    flex-flow column
+    align-items center
+
+    &__title
+      span
+        display inline-block
+        color #d2d3d4
+        padding 1em 1.5em
+        text-transform uppercase
+        border-top 1px solid #405f69
+        border-bottom 1px solid #405f69
+
+    &__links
+      padding 1.5em 1em
+
+      & li + li
+        margin-top .5em
+
+      a
+        color #b9d4de
+
+        &:hover
+          color #00baff

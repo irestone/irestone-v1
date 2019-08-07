@@ -2,7 +2,13 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/styles/main.css')
+    block styles
+      link(rel='stylesheet', href='/styles/main.css')
   body
-    block content
-    script(type='module', src='/scripts/main.js')
+    .body-wrapper
+      include panel
+      main.main(data-router-wrapper)
+        article(data-router-view=view)
+          block main
+      block scripts
+        script(type='module', src='/scripts/bundle.min.js')
