@@ -19,15 +19,19 @@ body,
   text-decoration: none;
 }
 .panel .logo {
-  display: block;
-  font-size: 2em;
-  height: 3em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 5em;
+  text-align: center;
 }
-.panel .logo span {
-  color: #fff;
+.panel .logo__link {
+  display: block;
+  font-size: 1.4em;
+  padding: 0.8em 1.1em;
+  background: linear-gradient(0deg, #323839 0%, #1a2326 3%, #1e292d 48%, #1b2629 97%, #2d3b40 100%);
+  letter-spacing: 0.1em;
+  color: #e2e2e2;
+}
+.panel .logo__link:focus {
+  outline: none;
 }
 .panel .photo {
   display: block;
@@ -38,6 +42,9 @@ body,
   box-shadow: 0 0 0.25em rgba(0,0,0,0.3);
   margin: 1vh auto 0;
   overflow: hidden;
+}
+.panel .photo:focus {
+  outline: none;
 }
 .panel .photo img {
   display: block;
