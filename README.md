@@ -16,4 +16,8 @@ My portfolio website on [Heroku](https://irestone-v1.herokuapp.com/)
 
 ## Usage
 
-`npm start` to run the server or `npm run dev` to run it in development mode.
+First, run `npm install` to install all the packages.
+
+Then create `.env` file in the root folder and fill it with environmental variables as in `.env.example`
+
+Then run `npm run build` and `npm start` to start the server. Or just `npm run dev` to run it in development mode.
