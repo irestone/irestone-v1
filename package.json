@@ -1,7 +1,16 @@
 {
-  "name": "node-pug",
-  "version": "0.0.0",
+  "name": "irestone-v1",
+  "author": "Khan Bifov @irestone",
+  "description": "Personal website",
+  "keywords": [
+    "nodejs",
+    "pug",
+    "stylus"
+  ],
+  "version": "0.1.0",
   "private": true,
+  "license": "ISC",
+  "main": "app.js",
   "scripts": {
     "start": "node -r esm ./bin/www",
     "dev": "run-p dev:*",
@@ -32,7 +41,6 @@
     "pug": "2.0.0-beta11",
     "stylus": "0.54.5"
   },
-  "main": "app.js",
   "devDependencies": {
     "@types/gsap": "^1.20.2",
     "cross-env": "^5.2.0",
@@ -43,9 +51,5 @@
     "rollup-plugin-commonjs": "^10.0.2",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-terser": "^5.1.1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  }
 }
