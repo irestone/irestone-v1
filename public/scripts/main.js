@@ -4,6 +4,8 @@ import { AboutRenderer } from './AboutRenderer'
 import { HomeRenderer } from './HomeRenderer'
 import { DefaultTransition } from './DefaultTransition'
 
+import { Drawer } from './panel/Drawer'
+
 const hw = new Highway.Core({
   renderers: {
     about: AboutRenderer,
@@ -15,3 +17,14 @@ const hw = new Highway.Core({
 })
 
 console.log(`${hw}`)
+
+const drawers = Array.from(document.querySelectorAll('.panel__drawer')).map(
+  (node) => new Drawer(node)
+)
+
+console.log(drawers)
+
+for (let i = 0, j = drawers.length - 1; i < drawers.length; i++, j--) {
+  const node = drawers[i].node
+  node.style.zIndex = j
+}

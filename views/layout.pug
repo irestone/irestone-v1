@@ -8,7 +8,7 @@ html
     .body-wrapper
       include panel
       main.main(data-router-wrapper)
-        article(data-router-view=view)
+        article.main__content(data-router-view=view)
           block main
       block scripts
         script(type='module', src='/scripts/bundle.min.js')

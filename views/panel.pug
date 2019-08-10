@@ -16,24 +16,32 @@
       //-     li: a(href='#in') LinkedIn
       //-     li: a(href='#fb') Facebook
   .panel__drawers
-    .panel__drawer(data-mode='closed')
-      .panel__drawer__header
-        | Projects
-      .panel__drawer__body
-        .panel__drawer__items(data-items-mode='preview')
-          .panel__drawer__item
-            | .panel__drawer__item
-    //- .panel__drawer(data-mode='ajar')
-    //-   .panel__drawer__header
-    //-     | Writings
-    //-   .panel__drawer__body
-    //-     .panel__drawer__items(data-items-mode='preview')
-    //-       .panel__drawer__item
-    //-         | .panel__drawer__item
-    //- .panel__drawer(data-mode='opened')
-    //-   .panel__drawer__header
-    //-     | Lorem
-    //-   .panel__drawer__body
-    //-     .panel__drawer__items(data-items-mode='full')
-    //-       .panel__drawer__item
-    //-         | .panel__drawer__item
+    - for (let i = 0; i < 2; i++)
+      .panel__drawer(data-category='projects')
+        .panel__drawer__content-holder: .panel__drawer__content
+          .panel__drawer__header
+            .panel__drawer__title Projects
+            .panel__drawer__tabs
+              //- tabs should be generated from category
+              .panel__drawer__tab(data-subcategory='pets') Pets
+              .panel__drawer__tab(data-subcategory='demos') Demos
+              .panel__drawer__tab(data-subcategory='design') Design
+            .panel__drawer__tags
+              //- tags should be generated from subcategory (tab)
+              .panel__drawer__tag(data-tag='nodejs') nodejs
+              .panel__drawer__tag(data-tag='react') react
+              .panel__drawer__tag(data-tag='spa') spa
+              .panel__drawer__tag(data-tag='nextjs') nextjs
+              .panel__drawer__tag(data-tag='gatsby') gatsby
+            .panel__drawer__all-tags: a.panel__drawer__all-tags__link(href='#') All Tags...
+            .panel__drawer__close-drawer _
+          .panel__drawer__body
+            .panel__drawer__items
+              - for (let i = 0; i < 20; i++)
+                .panel__drawer__item
+                  .project(data-format='preview')
+                    .project__poster
+                      img(src="https://via.placeholder.com/600x330", alt="")
+                    a(href='#').project__link Project Name
+            .panel__drawer__more-items: a.panel__drawer__more-items__link(href='#') More Projects...
+        .panel__drawer__handle: .panel__drawer__handle__label Projects

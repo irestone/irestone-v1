@@ -1,0 +1,76 @@
+&__main
+  width 14.5em
+  flex-shrink 0
+  background linear-gradient(to top, #0f2027, #203a43, #2c5364)
+  z-index 999
+  position relative
+
+  a
+    text-decoration none
+
+  .logo
+    height 5em
+    text-align center
+
+    &__link
+      display block
+      font-size 1.4em
+      padding .8em 1.1em
+      background: linear-gradient(0deg, #323839 0%, #151c1f 3%, #12181b 48%, #151c1f 97%, #2d3b40 100%)
+      letter-spacing .1em
+      color #efefef
+
+      &:focus
+        outline: none
+
+  .photo
+    display block
+    width (@width/1.9)
+    height @width
+    border-radius 50%
+    border 0.25em solid #405f69
+    box-shadow 0 0 .25em rgba(black, .3)
+    margin 1vh auto 0
+    overflow hidden
+
+    &:focus
+        outline: none
+
+    img
+      display block
+      width 100%
+
+  .intro
+    font-size 0.9em
+    font-style italic
+    text-align center
+    color #aebec5
+    margin-top 3vh
+    line-height 1.5
+
+  .nav
+    margin-top 3vh
+    display flex
+    flex-flow column
+    align-items center
+
+    &__title
+      span
+        display inline-block
+        color #d2d3d4
+        padding 1em 1.5em
+        text-transform uppercase
+        border-top 1px solid #405f69
+        border-bottom 1px solid #405f69
+
+    &__links
+      padding 1.5em 1em
+
+      & li + li
+        margin-top .5em
+
+      a
+        color #b9d4de
+
+        &:hover
+          color #00baff
