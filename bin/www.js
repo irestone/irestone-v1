@@ -1,6 +1,9 @@
 import { app } from '../app'
 import debug from 'debug'
 import http from 'http'
+import mongoose from 'mongoose'
+
+import { dbURI } from '../config'
 
 // =====================================
 //  HELPERS
@@ -46,7 +49,16 @@ const onListening = () => {
 }
 
 // =====================================
-//  INITIALIZING
+//  CONNECTING TO DATABASE
+// =====================================
+
+mongoose.connect(dbURI, { useNewUrlParser: true })
+const moncon = mongoose.connection
+moncon.on('error', console.error.bind(console, 'Connection to DB failed:'))
+moncon.once('open', console.log.bind(console, 'Connection to DB established.'))
+
+// =====================================
+//  STARTING THE SERVER
 // =====================================
 
 // ? why
