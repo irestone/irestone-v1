@@ -4,7 +4,9 @@ import path from 'path'
 import cookieParser from 'cookie-parser'
 import logger from 'morgan'
 import stylus from 'stylus'
+import bodyParser from 'body-parser'
 
+import { apiRouter } from './routes/api'
 import { indexRouter } from './routes/index'
 import { aboutRouter } from './routes/about'
 
@@ -18,6 +20,7 @@ app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
+app.use(bodyParser.json())
 
 // view engine
 app.set('view engine', 'pug')
@@ -32,6 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 // =====================================
 // ? should i do routing separately
 
+app.use('/api', apiRouter)
 app.use('/', indexRouter)
 app.use('/about', aboutRouter)
 
