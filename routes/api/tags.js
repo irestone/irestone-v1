@@ -6,8 +6,8 @@ export const tagsRouter = new Router()
 
 tagsRouter
   .route('/')
-  .get(async (_, res) => {
-    const tags = await Tag.find()
+  .get(async (req, res) => {
+    const tags = await Tag.find(req.query)
     res.json({ data: tags })
   })
   .post(async (req, res) => {

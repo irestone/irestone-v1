@@ -6,8 +6,8 @@ export const topicsRouter = new Router()
 
 topicsRouter
   .route('/')
-  .get(async (_, res) => {
-    const topics = await Topic.find()
+  .get(async (req, res) => {
+    const topics = await Topic.find(req.query)
     res.json({ data: topics })
   })
   .post(async (req, res) => {
