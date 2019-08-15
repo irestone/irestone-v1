@@ -100,6 +100,15 @@ body,
 }
 .panel__drawer {
   background: #0e181b;
+}
+.panel__drawer[data-mode='ajar'] {
+  width: 17em;
+}
+.panel__drawer[data-mode='opened'] {
+  width: 40em;
+}
+.panel__drawer__inner {
+  height: 100%;
   position: relative;
   display: flex;
 }
@@ -120,12 +129,6 @@ body,
   top: 0;
   right: 0;
 }
-.panel__drawer[data-mode='ajar'] {
-  width: 17em;
-}
-.panel__drawer[data-mode='opened'] {
-  width: 40em;
-}
 .panel__drawer__header {
   padding: 1em;
   background: #da89c5;
@@ -137,12 +140,16 @@ body,
   display: inline-block;
   background: #6a5acd;
   cursor: pointer;
-}
-.panel__drawer__tab + .panel__drawer__tab {
-  margin-left: 0.5em;
+  margin: 0 0.5em 0.5em 0;
 }
 .panel__drawer__tags {
   margin-top: 1em;
+}
+.panel__drawer__tag {
+  display: inline-block;
+  background: #cd5c5c;
+  cursor: pointer;
+  margin: 0 0.5em 0.5em 0;
 }
 .panel__drawer__all-tags {
   margin-top: 1em;
@@ -150,14 +157,6 @@ body,
 .panel__drawer__all-tags__link {
   font-size: 0.7em;
   color: #547079;
-}
-.panel__drawer__tag {
-  display: inline-block;
-  background: #cd5c5c;
-  cursor: pointer;
-}
-.panel__drawer__tag + .panel__drawer__tag {
-  margin-left: 0.5em;
 }
 .panel__drawer__close-drawer {
   position: absolute;
@@ -172,16 +171,16 @@ body,
   padding: 1.5em 1em 2.5em;
   overflow: auto;
 }
+.panel__drawer__item {
+  position: relative;
+}
 .panel__drawer__item + .panel__drawer__item {
   margin-top: 1em;
 }
-.panel__drawer .project {
-  position: relative;
-}
-.panel__drawer .project img {
+.panel__drawer__item img {
   max-width: 100%;
 }
-.panel__drawer .project__link {
+.panel__drawer__item__link {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -196,8 +195,9 @@ body,
   color: #6cfff9;
   opacity: 0;
   transition: all 0.3s ease-out;
+  cursor: pointer;
 }
-.panel__drawer .project__link:hover {
+.panel__drawer__item__link:hover {
   opacity: 1;
 }
 .panel__drawer__more-items {
@@ -242,4 +242,7 @@ body,
 }
 .main__content .title {
   font-size: 2em;
+}
+.main__content .body {
+  margin-top: 1.5em;
 }

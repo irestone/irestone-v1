@@ -22,7 +22,7 @@ const drawers = Array.from(document.querySelectorAll('.panel__drawer')).map(
   (node) => new Drawer(node)
 )
 
-console.log(drawers)
+drawers.forEach((d) => d.render())
 
 for (let i = 0, j = drawers.length - 1; i < drawers.length; i++, j--) {
   const node = drawers[i].node
