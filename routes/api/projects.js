@@ -6,8 +6,8 @@ export const projectsRouter = new Router()
 
 projectsRouter
   .route('/')
-  .get(async (_, res) => {
-    const projects = await Project.find()
+  .get(async (req, res) => {
+    const projects = await Project.find(req.query)
     res.json({ data: projects })
   })
   .post(async (req, res) => {
