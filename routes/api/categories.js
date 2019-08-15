@@ -20,7 +20,9 @@ categoriesRouter
     }
   })
 
-categoriesRouter.route('/:id').get(async (req, res) => {
-  const category = await Category.findById(req.params.id)
+categoriesRouter.route('/:idOrSlug').get(async (req, res) => {
+  const category = req.query.slug
+    ? await Category.findOne({ slug: req.params.idOrSlug })
+    : await Category.findById(req.params.idOrSlug)
   res.json({ data: category })
 })
