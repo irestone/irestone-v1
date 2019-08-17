@@ -6,11 +6,19 @@ export class Drawer {
   setMode(mode) {
     this.mode = mode
     this.node.dataset.mode = mode
-    if (mode !== 'closed' && !this.items) this.renderItems()
+    if (mode !== 'closed' && !this.items) this.setActiveTab(this.topics[0])
   }
 
   setActiveTab(topic) {
-    this.activeTab = topic
+    if (this.activeTab) {
+      this.node
+        .querySelector(`.panel__drawer__tab[data-topic='${this.activeTab}']`)
+        .classList.remove('--active')
+    }
+    this.activeTab = topic.slug
+    this.node
+      .querySelector(`.panel__drawer__tab[data-topic='${this.activeTab}']`)
+      .classList.add('--active')
     this.renderItems(topic)
   }
 
@@ -80,6 +88,7 @@ export class Drawer {
       const tab = document.createElement('div')
       tab.classList.add('panel__drawer__tab')
       tab.innerText = topic.name
+      tab.dataset.topic = topic.slug
       tab.addEventListener('click', this.setActiveTab.bind(this, topic))
       tabs.appendChild(tab)
     })

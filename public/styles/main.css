@@ -142,6 +142,9 @@ body,
   cursor: pointer;
   margin: 0 0.5em 0.5em 0;
 }
+.panel__drawer__tab.--active {
+  background: #978bdc;
+}
 .panel__drawer__tags {
   margin-top: 1em;
 }
