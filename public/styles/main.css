@@ -133,6 +133,9 @@ body,
   padding: 1em;
   background: #da89c5;
 }
+.panel__drawer__title {
+  cursor: pointer;
+}
 .panel__drawer__tabs {
   margin-top: 1em;
 }
