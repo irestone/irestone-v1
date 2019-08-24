@@ -9,6 +9,7 @@ import bodyParser from 'body-parser'
 import { apiRouter } from './routes/api'
 import { indexRouter } from './routes/index'
 import { aboutRouter } from './routes/about'
+import { adminRouter } from './routes/admin'
 
 export const app = express()
 
@@ -38,6 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use('/api', apiRouter)
 app.use('/', indexRouter)
 app.use('/about', aboutRouter)
+app.use('/admin', adminRouter)
 
 // catch 404 and forward to error handler
 app.use((_, __, next) => next(createHTTPError(404)))
