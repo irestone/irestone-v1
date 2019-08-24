@@ -25,11 +25,3 @@ adminRouter.get('/categories/:slug', (req, res) => {
     slug: req.params.slug,
   })
 })
-
-adminRouter.get('/projects/new', (req, res) => {
-  res.render(adminViews('projectEditor'), { title: 'New Project' })
-})
-
-adminRouter.get('/projects/edit/:id', (req, res) => {
-  res.render(adminViews('projectEditor'), { title: 'Edit Project' })
-})
