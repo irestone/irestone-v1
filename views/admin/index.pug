@@ -1,64 +1,67 @@
-extends page
+extends layout
 
-block content
-  section.settings__section#panel
-    h2.settings__section__header Panel
-    .settings__section__body
-      form(action="").form
-        .settings__field.settings__field--photo
-          .settings__field__title Photo
-          .settings__field__content
-            .form__field
-              .settings__field--photo__current-photo
-                img(src="http://via.placeholder.com/150x150", alt="")
-              input.form__button(name='photo' type='file' accept='image/png, image/jpeg')
-        .settings__field.settings__field--intro
-          .settings__field__title Intro
-          .settings__field__content
-            .form__field
-              textarea.form__input(name='intro' type='text') Here should be current intro text
-              button.form__button(type='cancel') Cancel
-        .settings__field.settings__field--contents
-          .settings__field__title Contents
-          //- Here should be either pages/category selector or external link
-          .settings__field__content
-            .settings__field--contents__new-page.form__field
-              input.form__input(name='new-page-name' type='text' placeholder=`Title`)
-              input.form__input(name='new-page-slug' type='text' placeholder=`Slug`)
-              button.form__button Add
-            ul.settings__field--contents__pages
-              li.settings__field--contents__page.form__field
-                input.form__input(name='page-name-home' type='text' value='About')
-                input.form__input(name='page-slug-about' type='text' value='about')
-                button.form__button(type='cancel') Cancel
-                button.form__button(type='delete') Delete
-        .settings__field.settings__field--contacts
-          .settings__field__title Contacts
-          .settings__field__content
-            .form__field
-              span.form__field__name Email
-              input.form__input(name='email' type='email' value='khan.bifov@gmail.com')
-              button.form__button(type='cancel') Cancel
-            .form__field
-              span.form__field__name Phone
-              input.form__input(name='phone' type='phone' value='+7 (928) 724-28-67')
-              button.form__button(type='cancel') Cancel
-            .settings__field__section
-              .settings__field__section__title Social Networks
-              .settings__field__section__content
+block main
+  article.settings
+    h1.settings__header Settings
+    .settings__body
+      section.settings__section
+        h2.settings__section__header Panel
+        .settings__section__body
+          form(action="").form
+            .settings__field.settings__field--photo
+              .settings__field__title Photo
+              .settings__field__content
                 .form__field
-                  span.form__field__name LinkedIn
-                  input.form__input(name='social-in' type='text' value='https://www.linkedin.com/in/khanbifov/')
+                  .settings__field--photo__current-photo
+                    img(src="http://via.placeholder.com/150x150", alt="")
+                  input.form__button(name='photo' type='file' accept='image/png, image/jpeg')
+            .settings__field.settings__field--intro
+              .settings__field__title Intro
+              .settings__field__content
+                .form__field
+                  textarea.form__input(name='intro' type='text') Here should be current intro text
+                  button.form__button(type='cancel') Cancel
+            .settings__field.settings__field--contents
+              .settings__field__title Contents
+              //- Here should be either pages/category selector or external link
+              .settings__field__content
+                .settings__field--contents__new-page.form__field
+                  input.form__input(name='new-page-name' type='text' placeholder=`Title`)
+                  input.form__input(name='new-page-slug' type='text' placeholder=`Slug`)
+                  button.form__button Add
+                ul.settings__field--contents__pages
+                  li.settings__field--contents__page.form__field
+                    input.form__input(name='page-name-home' type='text' value='About')
+                    input.form__input(name='page-slug-about' type='text' value='about')
+                    button.form__button(type='cancel') Cancel
+                    button.form__button(type='delete') Delete
+            .settings__field.settings__field--contacts
+              .settings__field__title Contacts
+              .settings__field__content
+                .form__field
+                  span.form__field__name Email
+                  input.form__input(name='email' type='email' value='khan.bifov@gmail.com')
                   button.form__button(type='cancel') Cancel
                 .form__field
-                  span.form__field__name Facebook
-                  input.form__input(name='social-fb' type='text' value='https://www.facebook.com/bifovkhan')
+                  span.form__field__name Phone
+                  input.form__input(name='phone' type='phone' value='+7 (928) 724-28-67')
                   button.form__button(type='cancel') Cancel
-                .form__field
-                  span.form__field__name Twitter
-                  input.form__input(name='social-tw' type='text' value='https://twitter.com/khanbifov')
-                  button.form__button(type='cancel') Cancel
-        .settings__field.settings__field--submit
-          .form__field
-            button.form__button(type='reset' disabled) Reset
-            button.form__button(type='save') Save
+                .settings__field__section
+                  .settings__field__section__title Social Networks
+                  .settings__field__section__content
+                    .form__field
+                      span.form__field__name LinkedIn
+                      input.form__input(name='social-in' type='text' value='https://www.linkedin.com/in/khanbifov/')
+                      button.form__button(type='cancel') Cancel
+                    .form__field
+                      span.form__field__name Facebook
+                      input.form__input(name='social-fb' type='text' value='https://www.facebook.com/bifovkhan')
+                      button.form__button(type='cancel') Cancel
+                    .form__field
+                      span.form__field__name Twitter
+                      input.form__input(name='social-tw' type='text' value='https://twitter.com/khanbifov')
+                      button.form__button(type='cancel') Cancel
+            .settings__field.settings__field--submit
+              .form__field
+                button.form__button(type='reset' disabled) Reset
+                button.form__button(type='save') Save
