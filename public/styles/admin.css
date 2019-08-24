@@ -1,0 +1,93 @@
+@import 'reset.css';
+html.admin {
+  min-height: 100%;
+  display: flex;
+}
+.admin body {
+  flex: 1;
+}
+.admin .body-wrapper {
+  height: 100%;
+}
+.admin .main {
+  width: 100%;
+}
+.admin body {
+  font: 1em sans-serif;
+}
+.admin .body-wrapper {
+  display: flex;
+}
+.admin .panel {
+  padding: 2em;
+  background: #243135;
+  color: #fff;
+}
+.admin .panel a {
+  color: #71bfd2;
+}
+.admin .panel .nav__link + .nav__link,
+.admin .panel .nav__sub-links {
+  margin-top: 0.5em;
+}
+.admin .panel .nav__sub-links {
+  margin-left: 1em;
+}
+.admin .main {
+  padding: 2em;
+}
+.settings__section__header {
+  font-size: 1.5em;
+}
+.settings__section__body {
+  margin-top: 2em;
+}
+.settings__field {
+  display: flex;
+}
+.settings__field + .settings__field {
+  margin-top: 2em;
+}
+.settings__field + .settings__field--submit {
+  margin-top: 3em;
+}
+.settings__field__section {
+  margin-top: 1.5em;
+}
+.settings__field__section__title {
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #000;
+  margin-bottom: 1em;
+  font-style: italic;
+}
+.settings__field__title {
+  min-width: 8rem;
+  font-size: 1.1em;
+  text-transform: capitalize;
+}
+.settings__field--submit {
+  padding-left: 8rem;
+}
+.form__field + .form__field {
+  margin-top: 0.5em;
+}
+.form__field__name {
+  display: inline-block;
+  min-width: 5em;
+}
+.form__input {
+  border: 0;
+}
+.form__input:hover,
+.form__input:focus {
+  outline: 1px solid #aaa;
+}
+.form__input + .form__button {
+  display: none;
+}
+.form__input:focus + .form__button {
+  display: inline;
+}
+.form__button[type='reset'][disabled] {
+  opacity: 0.5;
+}

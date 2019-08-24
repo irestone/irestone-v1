@@ -1,0 +1,8 @@
+extends layout
+
+block main
+  article.category(class=`category--${slug}`)
+    h1.category__header=title
+    .category__body
+      block content
+        p default content

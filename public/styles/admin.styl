@@ -1,0 +1,40 @@
+@require 'reset.css'
+
+html.admin
+  min-height: 100%
+  display flex
+.admin body
+  flex 1
+.admin .body-wrapper
+  height 100%
+
+.admin .main
+  width 100%
+
+.admin
+  body
+    font 1em sans-serif
+
+  .body-wrapper
+    display flex
+
+  .panel
+    padding 2em
+    background #243135
+    color white
+
+    a
+      color #71bfd2
+
+    .nav
+      &__link + ^[2..-1]__link
+      &__sub-links
+        margin-top 0.5em
+
+      &__sub-links
+        margin-left 1em
+
+  .main
+    padding 2em
+
+@import 'admin/settings'

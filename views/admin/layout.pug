@@ -1,0 +1,13 @@
+doctype html
+html.admin
+  head
+    title= title
+    block styles
+      link(rel='stylesheet', href='/styles/admin.css')
+  body
+    .body-wrapper
+      include panel
+      main.main
+        block main
+      block scripts
+        script(type='module', src='/scripts/admin.bundle.min.js')

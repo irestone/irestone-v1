@@ -1,0 +1,8 @@
+extends layout
+
+block main
+  article.page(class=`page--${slug} ${slug}`)
+    h1.page__header=title
+    .page__body
+      block content
+        p default content
