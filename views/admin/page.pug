@@ -1,8 +1,22 @@
 extends layout
 
+append styles
+  link(rel="stylesheet", href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css")
+
+append scripts
+  script(src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js")
+  script(type='module' src='/scripts/page.bundle.js')
+
 block main
-  article.page(class=`page--${slug} ${slug}`)
-    h1.page__header=title
-    .page__body
-      block content
-        p default content
+  article.page(class=(slug && `page--${slug}`) data-slug=slug id=_id)
+    form.page__form(action="")
+      header.page__header
+        input.page__title(name='title' type='text' placeholder='Title' value=(title || ''))
+        input.page__slug(name='slug' type='text' placeholder='slug' value=(slug || ''))
+        .page__controls
+          block controls
+            button(data-action='save') Save
+            button(data-action='delete') Delete
+      .page__body
+        block content
+          textarea.page__content.page__editor(name='content' placeholder='Content')=(content || '')
