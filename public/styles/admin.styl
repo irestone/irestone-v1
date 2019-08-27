@@ -19,6 +19,7 @@ html.admin
     display flex
 
   .panel
+    width 15rem
     padding 2em
     background #243135
     color white
@@ -36,6 +37,9 @@ html.admin
       &__link + ^[2..-1]__link
       &__sub-links
         margin-top 0.5em
+
+      &__link + ^[2..-1]__link.has-sub-links
+        margin-top 1.5em
 
       &__sub-links
         margin-left 1em

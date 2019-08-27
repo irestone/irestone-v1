@@ -17,6 +17,16 @@ export default [
     watch: { clearScreen: false },
   },
   {
+    input: `${scriptsDir}/admin.js`,
+    output: {
+      file: `${scriptsDir}/admin.bundle.js`,
+      format: 'esm',
+    },
+    // plugins: [resolve(), cjs(), terser()],
+    plugins: [resolve(), cjs()],
+    watch: { clearScreen: false },
+  },
+  {
     input: `${scriptsDir}/page.js`,
     output: {
       file: `${scriptsDir}/page.bundle.js`,

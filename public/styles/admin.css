@@ -19,6 +19,7 @@ html.admin {
   display: flex;
 }
 .admin .panel {
+  width: 15rem;
   padding: 2em;
   background: #243135;
   color: #fff;
@@ -32,6 +33,9 @@ html.admin {
 .admin .panel .nav__link + .nav__link,
 .admin .panel .nav__sub-links {
   margin-top: 0.5em;
+}
+.admin .panel .nav__link + .nav__link.has-sub-links {
+  margin-top: 1.5em;
 }
 .admin .panel .nav__sub-links {
   margin-left: 1em;
