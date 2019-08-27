@@ -36,4 +36,14 @@ export default [
     plugins: [resolve(), cjs()],
     watch: { clearScreen: false },
   },
+  {
+    input: `${scriptsDir}/category.js`,
+    output: {
+      file: `${scriptsDir}/category.bundle.js`,
+      format: 'esm',
+    },
+    // plugins: [resolve(), cjs(), terser()],
+    plugins: [resolve(), cjs()],
+    watch: { clearScreen: false },
+  },
 ]

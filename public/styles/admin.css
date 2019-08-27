@@ -43,10 +43,6 @@ html.admin {
 .admin .main {
   padding: 2em;
 }
-.page__body {
-  margin-top: 3em;
-  max-width: 45rem;
-}
 .settings__header {
   font-size: 2em;
 }
@@ -85,26 +81,36 @@ html.admin {
 .settings__field--submit {
   padding-left: 8rem;
 }
-.form__field + .form__field {
+.settings .form__field + .settings .form__field {
   margin-top: 0.5em;
 }
-.form__field__name {
+.settings .form__field__name {
   display: inline-block;
   min-width: 5em;
 }
-.form__input {
+.settings .form__input {
   border: 0;
 }
-.form__input:hover,
-.form__input:focus {
+.settings .form__input:hover,
+.settings .form__input:focus {
   outline: 1px solid #aaa;
 }
-.form__input + .form__button {
+.settings .form__input + .settings__button {
   display: none;
 }
-.form__input:focus + .form__button {
+.settings .form__input:focus + .settings__button {
   display: inline;
 }
-.form__button[type='reset'][disabled] {
+.settings .form__button[type='reset'][disabled] {
   opacity: 0.5;
+}
+.page__body {
+  margin-top: 3em;
+  max-width: 45rem;
+}
+.category__section + .category__section {
+  margin-top: 3em;
+}
+.category__section__body {
+  margin-top: 1.5em;
 }

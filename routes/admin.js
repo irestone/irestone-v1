@@ -3,6 +3,7 @@ import createHTTPError from 'http-errors'
 import { Router } from 'express'
 
 import { Page } from '../models/Page'
+import { Category } from '../models/Category'
 
 const adminViews = (fileName) => path.join('admin', fileName)
 
@@ -25,9 +26,8 @@ adminRouter.get('/pages/:slug', async (req, res, next) => {
   res.render(adminViews('page'), page)
 })
 
-adminRouter.get('/categories/:slug', (req, res) => {
-  res.render(adminViews('category'), {
-    title: req.params.slug,
-    slug: req.params.slug,
-  })
+adminRouter.get('/categories/:slug', async (req, res, next) => {
+  const category = await Category.findOne({ slug: req.params.slug })
+  if (!category) return next(createHTTPError(404))
+  res.render(adminViews('category'), category)
 })

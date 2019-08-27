@@ -1,8 +1,23 @@
 extends layout
 
+append scripts
+  //- script(src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js")
+  script(type='module' src='/scripts/category.bundle.js')
+
 block main
-  article.category(class=`category--${slug}`)
-    h1.category__header=title
-    .category__body
-      block content
-        p default content
+  .category(class=(slug && `category--${slug}`) data-slug=slug id=_id)
+    section.category__section.category__section--category
+      h3.category__section__header=name
+      .category__section__body: form.form
+        input.form__input(name='name' type='text' placeholder='Name' value=name)
+        input.form__input(name='slug' type='text' placeholder='Slug' value=slug)
+        button.form__button(data-action='save') save
+    section.category__section.category__section--topics
+      h3.category__section__header Topics
+      .category__section__body [topics]
+    section.category__section.category__section--tags
+      h3.category__section__header Tags
+      .category__section__body [tags]
+    section.category__section.category__section--entries
+      h3.category__section__header=name
+      .category__section__body [entries]

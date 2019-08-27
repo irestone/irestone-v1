@@ -40,29 +40,29 @@
     &--submit
       padding-left 8rem
 
-.form
+  .form
 
-  &__field
-    & + &
-      margin-top 0.5em
+    &__field
+      & + &
+        margin-top 0.5em
 
-    &__name
-      display inline-block
-      min-width 5em
+      &__name
+        display inline-block
+        min-width 5em
 
-  &__input
-    border 0
+    &__input
+      border 0
 
-    &:hover
-    &:focus
-      outline 1px solid #aaa
+      &:hover
+      &:focus
+        outline 1px solid #aaa
 
-    & + ^[0]__button
-      display none
+      & + ^[0]__button
+        display none
 
-    &:focus + ^[0]__button
-      display inline
+      &:focus + ^[0]__button
+        display inline
 
-  &__button
-    &[type='reset'][disabled]
-      opacity .5
+    &__button
+      &[type='reset'][disabled]
+        opacity .5
