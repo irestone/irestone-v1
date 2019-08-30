@@ -1,15 +1,28 @@
+include mixins/icons
+
 .panel
   .panel__main
-    div.logo: a(href="/").logo__link irestone
-    a(href='/about').photo
-      img(src="/images/face.jpg", alt="Me")
-    .intro.
+    a(href="/").panel__main__logo irestone
+    a(href='/about').panel__main__photo: img(src="/images/face.jpg", alt="Me")
+    .panel__main__intro.
       Hi, there!#[br]My name's Khan.#[br]And this is my little#[br]playground.
-    nav.nav
-      .nav__section
-        .nav__title: span Main Pages
-        ul.nav__links
-          li: a(href='/') home
-          li: a(href='/about') about
+    nav.panel__main__nav
+      .panel__main__nav__section
+        .panel__main__nav__title Contents
+        ul.panel__main__nav__links.panel__main__nav__links--contents
+          li: a(href='/about') About
+          li: a(href='/experience') Experience
+          li: a(href='/resume.pdf' target='_blank') Resume
+      .panel__main__nav__section
+        .panel__main__nav__title: span Contacts
+        ul.panel__main__nav__links.panel__main__nav__links--contacts
+          li +7 (928) 724-28-67
+          li: a(href='mailto:khan.bifov@gmail.com') khan.bifov@gmail.com
+        ul.panel__main__nav__links.panel__main__nav__links--socials
+          li: a(href='https://github.com/irestone' title='GitHub'): +icon_github
+          li: a(href='https://www.linkedin.com/in/khanbifov/' title='LinkedIn'): +icon_linkedin
+          li: a(href='https://www.facebook.com/bifovkhan' title='Facebook'): +icon_facebook
+          li: a(href='https://twitter.com/khanbifov' title='Twitter'): +icon_twitter
+          li: a(href='https://t.me/khanbifov' title='Telegram'): +icon_telegram
   .panel__drawers
     .panel__drawer(data-category='projects')
