@@ -1,8 +1,8 @@
 extends layout
 
-append scripts
+//- append scripts
   //- script(src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js")
-  script(type='module' src='/scripts/category.bundle.js')
+  //- script(type='module' src='/scripts/category.bundle.js')
 
 block main
   .category(class=(slug && `category--${slug}`) data-slug=slug id=_id)

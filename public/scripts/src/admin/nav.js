@@ -1,6 +1,6 @@
-import { parseHTML } from '../utils'
+import { parseHTML } from '../utils/dom'
 
-export const nav = async () => {
+export const generateNav = async () => {
   return parseHTML(`
     <nav class='nav'>
       <ul class='nav__links'>

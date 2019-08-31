@@ -1,4 +1,4 @@
-import { parseHTML } from '../../utils'
+import { parseHTML } from '../../../../utils/dom'
 
 export const header = (
   { category, topics, tags },

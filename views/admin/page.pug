@@ -5,7 +5,7 @@ append styles
 
 append scripts
   script(src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js")
-  script(type='module' src='/scripts/page.bundle.js')
+  script(type='module' src='/scripts/admin.page.bundle.min.js')
 
 block main
   article.page(class=(slug && `page--${slug}`) data-slug=slug id=_id)

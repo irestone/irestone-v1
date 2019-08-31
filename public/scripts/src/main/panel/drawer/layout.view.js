@@ -1,6 +1,6 @@
-import { parseHTML } from '../../utils'
+import { parseHTML } from '../../../utils/dom'
 
-import { header } from './header.view'
+import { header } from './layout.view/header.view'
 
 export const layout = (data, handlers) => {
   const innerElement = parseHTML(`

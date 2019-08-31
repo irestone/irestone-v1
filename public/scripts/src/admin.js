@@ -1,7 +1,7 @@
-import { nav } from './admin/nav'
+import { generateNav } from './admin/nav'
 
 const panelElement = document.querySelector('.panel')
 
-nav()
+generateNav()
   .then((navElement) => panelElement.appendChild(navElement))
   .catch(console.error)

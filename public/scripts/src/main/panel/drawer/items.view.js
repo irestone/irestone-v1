@@ -1,4 +1,4 @@
-import { parseHTML } from '../../utils'
+import { parseHTML } from '../../../utils/dom'
 
 export const items = ({ items }) => {
   const itemsElement = parseHTML(`<div class='panel__drawer__items'></div>`)
