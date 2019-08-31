@@ -1,4 +1,3 @@
-import createHTTPError from 'http-errors'
 import express from 'express'
 import path from 'path'
 import cookieParser from 'cookie-parser'
@@ -6,10 +5,7 @@ import logger from 'morgan'
 import stylus from 'stylus'
 import bodyParser from 'body-parser'
 
-import { apiRouter } from './routes/api'
-import { indexRouter } from './routes/index'
-import { aboutRouter } from './routes/about'
-import { adminRouter } from './routes/admin'
+import { router } from './router'
 
 export const app = express()
 
@@ -34,20 +30,5 @@ app.use(express.static(path.join(__dirname, 'public')))
 // =====================================
 //  ROUTING
 // =====================================
-// ? should i do routing separately
 
-app.use('/api', apiRouter)
-app.use('/', indexRouter)
-app.use('/about', aboutRouter)
-app.use('/admin', adminRouter)
-
-// catch 404 and forward to error handler
-app.use((_, __, next) => next(createHTTPError(404)))
-
-// error handler
-app.use((err, req, res, next) => {
-  res.locals.message = err.message
-  res.locals.error = req.app.get('env') === 'development' ? err : {}
-  res.status(err.status || 500)
-  res.render('error')
-})
+app.use(router)
