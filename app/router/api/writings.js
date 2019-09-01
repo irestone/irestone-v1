@@ -1,6 +1,6 @@
 import { Router } from 'express'
 
-import { Writing } from '../../models/Writing'
+import { Writing } from '../models/Writing'
 
 export const writingsRouter = new Router()
 

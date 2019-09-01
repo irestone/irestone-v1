@@ -2,10 +2,9 @@ import express from 'express'
 import path from 'path'
 import cookieParser from 'cookie-parser'
 import logger from 'morgan'
-import stylus from 'stylus'
 import bodyParser from 'body-parser'
 
-import { router } from './router'
+import { router } from './app/router'
 
 export const app = express()
 
@@ -21,10 +20,9 @@ app.use(bodyParser.json())
 
 // view engine
 app.set('view engine', 'pug')
-app.set('views', path.join(__dirname, 'views'))
+app.set('views', path.join(__dirname, 'app', 'views'))
 
 // static files
-app.use(stylus.middleware(path.join(__dirname, 'public')))
 app.use(express.static(path.join(__dirname, 'public')))
 
 // =====================================

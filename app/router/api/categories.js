@@ -1,6 +1,6 @@
 import { Router } from 'express'
 
-import { Category } from '../../models/Category'
+import { Category } from '../models/Category'
 
 export const categoriesRouter = new Router()
 

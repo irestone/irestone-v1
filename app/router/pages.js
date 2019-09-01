@@ -1,7 +1,7 @@
 import { Router } from 'express'
 import createHTTPError from 'http-errors'
 
-import { Page } from '../models/Page'
+import { Page } from './models/Page'
 
 export const pagesRouter = new Router()
 

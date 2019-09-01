@@ -1,6 +1,6 @@
 import { Router } from 'express'
 
-import { Topic } from '../../models/Topic'
+import { Topic } from '../models/Topic'
 
 export const topicsRouter = new Router()
 

@@ -2,8 +2,8 @@ import path from 'path'
 import createHTTPError from 'http-errors'
 import { Router } from 'express'
 
-import { Page } from '../models/Page'
-import { Category } from '../models/Category'
+import { Page } from './models/Page'
+import { Category } from './models/Category'
 
 const adminViews = (fileName) => path.join('admin', fileName)
 

@@ -1,6 +1,6 @@
 import { Router } from 'express'
 
-import { Tag } from '../../models/Tag'
+import { Tag } from '../models/Tag'
 
 export const tagsRouter = new Router()
 

@@ -15,8 +15,15 @@
     "start": "node -r esm ./bin/www",
     "dev": "run-p dev:*",
     "dev:server": "cross-env DEBUG=node-pug:* nodemon -r dotenv/config -r esm ./bin/www --ignore public --ignore node_modules",
-    "dev:client": "rollup -c -w",
-    "build": "rollup -c",
+    "dev:client": "npm run watch",
+    "build": "run-p build:*",
+    "watch": "run-p watch:*",
+    "prebuild:scripts": "rm -rf public/scripts/*.*",
+    "build:scripts": "rollup -c",
+    "watch:scripts": "npm run build:scripts -- -w",
+    "prebuild:styles": "rm -rf public/styles/*.*",
+    "build:styles": "stylus app/styles -o public/styles -c -m",
+    "watch:styles": "npm run build:styles -- -w",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run build"
   },
   "dependencies": {
@@ -43,8 +50,7 @@
     "mongoose": "^5.6.9",
     "morgan": "~1.9.1",
     "prettier": "^1.16.4",
-    "pug": "2.0.0-beta11",
-    "stylus": "0.54.5"
+    "pug": "2.0.0-beta11"
   },
   "devDependencies": {
     "@types/gsap": "^1.20.2",
@@ -55,6 +61,7 @@
     "rollup": "^1.19.4",
     "rollup-plugin-commonjs": "^10.0.2",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-terser": "^5.1.1"
+    "rollup-plugin-terser": "^5.1.1",
+    "stylus": "^0.54.5"
   }
 }

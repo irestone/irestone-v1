@@ -1,6 +1,6 @@
 import { Router } from 'express'
 
-import { Project } from '../../models/Project'
+import { Project } from '../models/Project'
 
 export const projectsRouter = new Router()
 
