@@ -1,12 +1,12 @@
 const isDefined = (...values) => values.every((v) => v !== undefined)
 
-const errNoVar = (varName) => {
+const errNoEnvVar = (varName) => {
   throw new Error(`Environmental variable ${varName} has not been set.`)
 }
 
 const { DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASS } = process.env
 if (!isDefined(DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASS))
-  errNoVar('(DB_HOST | DB_PORT | DB_NAME | DB_USER | DB_PASS)')
+  errNoEnvVar('(DB_HOST | DB_PORT | DB_NAME | DB_USER | DB_PASS)')
 
 export const db = {
   host: DB_HOST,
