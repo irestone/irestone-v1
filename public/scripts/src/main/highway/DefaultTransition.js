@@ -14,11 +14,11 @@ export class DefaultTransition extends Highway.Transition {
   }
 
   in({ from, to, trigger, done }) {
-    const els = to.querySelectorAll('[data-router-view] > *')
+    const elements = to.querySelectorAll('[data-router-view] > * > *')
     const tlm = new TimelineMax({ onComplete: done })
 
     tlm.staggerFromTo(
-      els,
+      elements,
       0.2,
       { opacity: 0, y: 10 },
       { opacity: 1, y: 0 },

@@ -7,8 +7,9 @@ html
   body
     .body-wrapper
       include panel
-      main.main(data-router-wrapper)
-        article.main__content(data-router-view)
+      .main(data-router-wrapper)
+        .main__content(data-router-view='default')
           block main
       block scripts
+        script(src='https://cdn.jsdelivr.net/npm/markdown-it@9.1.0/dist/markdown-it.min.js')
         script(type='module', src='/scripts/main.bundle.min.js')

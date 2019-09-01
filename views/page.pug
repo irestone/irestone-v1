@@ -1,6 +1,7 @@
 extends layout
 
 block main
-  header.header
-    h1.title= title
-  .body= content
+  article.page
+    header.page__header
+      h1.page__header__title= title
+    .page__body(data-markdown=content)
