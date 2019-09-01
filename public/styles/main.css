@@ -1,4 +1,8 @@
 @import 'reset.css';
+.icon {
+  width: 100%;
+  height: 100%;
+}
 html,
 body,
 .body-wrapper {
@@ -290,7 +294,89 @@ body,
 .main__content .body {
   margin-top: 1.5em;
 }
-.icon {
-  width: 100%;
-  height: 100%;
+.page {
+  color: #d2d3d4;
+}
+.page__header__title {
+  font-size: 3rem;
+}
+.page__body {
+  margin-top: 3rem;
+}
+.page__body * + p,
+.page__body * + h1,
+.page__body * + h2,
+.page__body * + h3,
+.page__body * + h4,
+.page__body * + h5,
+.page__body * + h6,
+.page__body * + ul,
+.page__body * + ol,
+.page__body * + table {
+  margin-top: 1em;
+}
+.page__body h1 {
+  font-size: 2.4rem;
+}
+.page__body h2 {
+  font-size: 1.8rem;
+}
+.page__body h3 {
+  font-size: 1.2rem;
+}
+.page__body h4,
+.page__body h5,
+.page__body h6 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.page__body table {
+  display: block;
+}
+.page__body table thead {
+  display: none;
+}
+.page__body table tr + tr {
+  border-top: 1px solid #2d3d42;
+}
+.page__body table td {
+  padding: 0.5em;
+}
+.page__body img {
+  max-width: 100%;
+}
+.page__body img[src*='profile'] {
+  width: 30%;
+  float: right;
+  margin-left: 2rem;
+}
+.page__body a {
+  color: #649db3;
+  text-decoration: none;
+}
+.page__body a:hover {
+  color: #7bacbe;
+  text-decoration: underline;
+}
+.page__body ul li,
+.page__body ol li {
+  margin-left: 1rem;
+  position: relative;
+}
+.page__body ul li + li,
+.page__body ol li + li {
+  margin-top: 0.5em;
+}
+.page__body ul li::before,
+.page__body ol li::before {
+  content: '-';
+  display: block;
+  float: left;
+  transform: translate(-0.5em);
+}
+.page__body em {
+  font-style: italic;
+}
+.page__body strong {
+  font-weight: bold;
 }
