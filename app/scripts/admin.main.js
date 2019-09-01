@@ -1,4 +1,4 @@
-import { generateNav } from './admin/nav'
+import { generateNav } from './admin.main/nav'
 
 const panelElement = document.querySelector('.panel')
 

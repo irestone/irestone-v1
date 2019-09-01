@@ -17,4 +17,4 @@ const bundle = (...fileNames) =>
     watch: { clearScreen: false },
   }))
 
-export default bundle('main', 'admin', 'admin.page')
+export default bundle('main', 'admin.main', 'admin.page')
