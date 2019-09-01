@@ -1,0 +1,78 @@
+.page
+  color #d2d3d4
+
+  &__header
+    &__title
+      font-size 3rem
+
+  &__body
+    margin-top 3rem
+
+    * + p,
+    * + h1, * + h2, * + h3, * + h4, * + h5, * + h6,
+    * + ul, * + ol,
+    * + table
+      margin-top 1em
+
+    h1
+      font-size 2.4rem
+
+    h2
+      font-size 1.8rem
+
+    h3
+      font-size 1.2rem
+
+    h4, h5, h6
+      font-size 1rem
+      font-weight bold
+
+    table
+      display block
+
+      thead
+        display none
+
+      tr
+        & + tr
+          border-top 1px solid #2d3d42
+
+      td
+        padding 0.5em
+
+    img
+      max-width 100%
+
+      &[src*='profile']
+        width 30%
+        float right
+        margin-left 2rem
+
+    a
+      color #649db3
+      text-decoration none
+
+      &:hover
+        color #7bacbe
+        text-decoration underline
+
+    ul
+    ol
+      li
+        margin-left 1rem
+        position relative
+
+        & + li
+          margin-top 0.5em
+
+        &::before
+          content '-'
+          display block
+          float left
+          transform translate(-0.5em)
+
+    em
+      font-style italic
+
+    strong
+      font-weight bold
