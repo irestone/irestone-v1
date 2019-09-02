@@ -1,5 +1,5 @@
 &__main
-  color #b9d4de
+  color: color.flare.normal
   background linear-gradient(to top, #0f2027, #203a43, #2c5364)
   width 14.5em
   flex-shrink 0
@@ -8,10 +8,10 @@
 
   a
     text-decoration none
-    color #b9d4de
+    color: color.flare.normal
 
     &:hover
-      color #00baff
+      color: color.flare.light
 
     &:focus
       outline: none
@@ -20,16 +20,20 @@
     font-size 1.4em
     letter-spacing .1em
     text-align center
-    color #efefef
+    color: color.flare.light !important
     display block
     padding .8em 1.1em
     background: linear-gradient(0deg, #323839 0%, #151c1f 3%, #12181b 48%, #151c1f 97%, #2d3b40 100%)
+    background: color.shade.dark
+
+    &:hover
+      color: color.flare.light !important
 
   &__photo
     display block
     width (@width/1.9)
     height @width
-    border 0.25em solid #405f69
+    border: 0.25em solid color.primary.light
     border-radius 50%
     margin 2rem auto 0
     overflow hidden
@@ -45,7 +49,7 @@
     font-style italic
     line-height 1.5
     text-align center
-    color #aebec5
+    color: color.flare.dark
     margin 2rem auto 0
 
   &__nav
@@ -66,8 +70,8 @@
       color #d2d3d4
       width 70%
       padding .8em 1.6em
-      border-top 1px solid #405f69
-      border-bottom 1px solid #405f69
+      border-top: 1px solid color.primary.light
+      border-bottom: 1px solid color.primary.light
       margin 0 auto
 
     &__links
@@ -99,10 +103,10 @@
           width 2em
           height @width
           border-radius 50%
-          background #649db3
+          background: color.accent.normal
 
           &:hover
-            background #7bacbe !important
+            background: color.accent.light !important
 
         .icon
           width 65%
