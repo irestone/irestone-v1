@@ -33,12 +33,18 @@
       thead
         display none
 
-      tr
-        & + tr
-          border-top 1px solid #2d3d42
-
       td
-        padding 0.5em
+        padding 0.3em 0
+
+        &:nth-child(1)
+          min-width 6rem
+          padding-right 1rem
+          text-align right
+          font-style italic
+          font-weight bold
+
+      & + *
+        margin-top 2rem
 
     img
       max-width 100%
