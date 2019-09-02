@@ -1,23 +1,36 @@
-import { Router } from 'express'
+import express from 'express'
 import createHTTPError from 'http-errors'
+import path from 'path'
 
 import { apiRouter } from './router/api'
 import { adminRouter } from './router/admin'
 import { pagesRouter } from './router/pages'
 
-export const router = new Router()
+export const router = (req, _, next) => {
+  const { app } = req
 
-router.use('/api', apiRouter)
-router.use('/admin', adminRouter)
-router.use(pagesRouter)
+  // views
+  app.set('view engine', 'pug')
+  app.set('views', path.join(__dirname, 'views'))
 
-// catch 404 and forward to error handler
-router.use((_, __, next) => next(createHTTPError(404)))
+  // static files
+  app.use(express.static(path.join(__dirname, '../', 'public')))
 
-// error handler
-router.use((err, req, res, next) => {
-  res.locals.message = err.message
-  res.locals.error = req.app.get('env') === 'development' ? err : {}
-  res.status(err.status || 500)
-  res.render('error')
-})
+  // routes
+  app.use('/api', apiRouter)
+  app.use('/admin', adminRouter)
+  app.use(pagesRouter)
+
+  // catch 404 and forward to error handler
+  app.use((_, __, next) => next(createHTTPError(404)))
+
+  // error handler
+  app.use((err, req, res, next) => {
+    res.locals.message = err.message
+    res.locals.error = req.app.get('env') === 'development' ? err : {}
+    res.status(err.status || 500)
+    res.render('error')
+  })
+
+  next()
+}
