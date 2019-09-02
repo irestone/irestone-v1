@@ -14,7 +14,7 @@ export const router = (req, _, next) => {
   app.set('views', path.join(__dirname, 'views'))
 
   // static files
-  app.use(express.static(path.join(__dirname, '../', 'public')))
+  app.use(express.static(path.join(__dirname, 'static')))
 
   // routes
   app.use('/api', apiRouter)

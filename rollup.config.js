@@ -3,7 +3,7 @@ import cjs from 'rollup-plugin-commonjs'
 import { terser } from 'rollup-plugin-terser'
 
 const inputDir = 'app/scripts'
-const outputDir = 'public/scripts'
+const outputDir = 'app/static/scripts'
 
 const bundle = (...fileNames) =>
   fileNames.map((fileName) => ({
