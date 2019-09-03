@@ -1,0 +1,14 @@
+*
+
+!app
+!bin
+!.eslintignore
+!.eslintrc.yml
+!.prettierrc.yml
+!app.js
+!config.js
+!db.js
+!launcher.js
+!package.json
+!rollup.config.js
+!server.js
