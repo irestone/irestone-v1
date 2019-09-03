@@ -23,6 +23,7 @@
     "build:scripts": "rollup -c",
     "prebuild:styles": "rm -rf app/static/styles/*.*",
     "build:styles": "stylus app/styles -o app/static/styles -c -m",
+    "test": "echo God bless you",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run build"
   },
   "dependencies": {
